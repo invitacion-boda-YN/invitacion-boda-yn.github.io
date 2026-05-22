@@ -77,9 +77,17 @@
       object-fit: cover;
     }
 
+    /* Contador mejorado */
+    .countdown-number {
+      font-size: 2.8rem;
+      line-height: 1;
+      font-weight: 300;
+    }
+
     @media (max-width: 640px) {
       h1 { font-size: 3.1rem !important; }
       .slideshow-container { height: 400px; }
+      .countdown-number { font-size: 2.1rem; }
     }
   </style>
 </head>
@@ -121,40 +129,30 @@
     </div>
 
     <div class="max-w-2xl mx-auto px-6 mt-16 space-y-16">
-      <!-- Las 5 tarjetas de historia se mantienen iguales -->
       <div class="timeline-item">
         <div class="timeline-icon"><i class="fas fa-coffee text-[#2c5a8c]"></i></div>
         <div class="floral-card p-8 rounded-3xl">
-          <p class="text-sm text-[#2c5a8c]">Marzo 2019</p>
+          <p class="text-sm text-[#2c5a8c]">Agosto 2016</p>
           <strong class="text-2xl">Nuestro primer encuentro</strong>
-          <p class="mt-3 text-gray-700">Nos conocimos en una cafetería de Polanco. Una tarde lluviosa que cambió nuestras vidas para siempre.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-icon"><i class="fas fa-utensils text-[#2c5a8c]"></i></div>
-        <div class="floral-card p-8 rounded-3xl">
-          <p class="text-sm text-[#2c5a8c]">Junio 2019</p>
-          <strong class="text-2xl">Primera cita oficial</strong>
-          <p class="mt-3 text-gray-700">Cenamos en un restaurante italiano. Hablamos hasta que cerraron el lugar.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-icon"><i class="fas fa-ring text-[#2c5a8c]"></i></div>
-        <div class="floral-card p-8 rounded-3xl">
-          <p class="text-sm text-[#2c5a8c]">Diciembre 2020</p>
-          <strong class="text-2xl">Nos hicimos novios</strong>
-          <p class="mt-3 text-gray-700">Una Nochebuena mágica donde Natanaels me pidió ser su novia bajo las luces de la ciudad.</p>
+          <p class="mt-3 text-gray-700">Nos conocimos en un cumpleaños, donde no podíamos dejar de mirarnos, y desde ahí las palabras se dieron por sí solas. Fue como si nos conociéramos de toda la vida.</p>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-icon"><i class="fas fa-plane text-[#2c5a8c]"></i></div>
         <div class="floral-card p-8 rounded-3xl">
-          <p class="text-sm text-[#2c5a8c]">Agosto 2022</p>
-          <strong class="text-2xl">Nuestro primer viaje juntos</strong>
-          <p class="mt-3 text-gray-700">París nos robó el corazón.</p>
+          <p class="text-sm text-[#2c5a8c]">Marzo 2017</p>
+          <strong class="text-2xl">Nos hicimos Novios</strong>
+          <p class="mt-3 text-gray-700">Posterior a nuestro primer viaje juntos a Licanray, empezó nuestro pololeo y desde ahí comenzaron muchas aventuras en una montaña rusa de emociones y amor.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fas fa-ring text-[#2c5a8c]"></i></div>
+        <div class="floral-card p-8 rounded-3xl">
+          <p class="text-sm text-[#2c5a8c]">Abril 2026</p>
+          <strong class="text-2xl">La Sorpresa</strong>
+          <p class="mt-3 text-gray-700">Después de 3 años viviendo juntos y 8 años de pareja, llega a remecer esta familia de 7 la pequeña Emma, quien se convierte en la alegría de nuestro hogar.</p>
         </div>
       </div>
 
@@ -162,8 +160,8 @@
         <div class="timeline-icon"><i class="fas fa-gem text-[#2c5a8c]"></i></div>
         <div class="floral-card p-8 rounded-3xl">
           <p class="text-sm text-[#2c5a8c]">Febrero 2025</p>
-          <strong class="text-2xl">La propuesta</strong>
-          <p class="mt-3 text-gray-700">En la playa de Tulum, al atardecer, Natanaels me pidió que pasara el resto de mi vida con él.</p>
+          <strong class="text-2xl">Nuestra Promesa</strong>
+          <p class="mt-3 text-gray-700">Luego de 4 años comprometidos, con 3 hijas, 3 mascotas y un hogar juntos, tomamos la decisión de concretar nuestro compromiso y unir así nuestro amor... por fin.</p>
         </div>
       </div>
     </div>
@@ -172,7 +170,7 @@
   <!-- GALERÍA -->
   <section class="py-16">
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-5xl font-light mb-3 accent-blue">Galería de Fotos</h2>
+      <h2 class="text-5xl font-light mb-3 accent-blue">Los capítulos más bonitos de nuestra historia</h2>
       <p class="text-gray-700 mb-10">Momentos que atesoramos</p>
 
       <div class="slideshow-container" id="slideshowContainer">
@@ -186,21 +184,32 @@
     </div>
   </section>
 
+  <!-- FRASE -->
+  <section class="py-12 bg-white/70">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-2xl md:text-3xl font-light italic leading-relaxed text-[#1e2a44]">
+        "El amor es paciente, es bondadoso. El amor no es envidioso ni presumido ni orgulloso. 
+        No se comporta con rudeza, no es egoísta, no se enoja fácilmente, no guarda rencor."
+      </p>
+      <p class="text-sm text-gray-500 mt-6">1 Corintios 13</p>
+    </div>
+  </section>
+
   <!-- DETALLES -->
   <section class="py-20">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-5xl font-light text-center mb-12 accent-blue">Detalles del Evento</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="floral-card p-10 rounded-3xl text-center">Fecha<br><span class="text-4xl font-light">6 de Febrero, 2027</span><br><span class="text-xl">Sábado</span></div>
-        <div class="floral-card p-10 rounded-3xl text-center">Hora<br><span class="text-4xl font-light">5:00 PM</span><br><span class="text-xl">Ceremonia y recepción</span></div>
+        <div class="floral-card p-10 rounded-3xl text-center">Hora<br><span class="text-4xl font-light">6:30 PM</span><br><span class="text-xl">Ceremonia y recepción</span></div>
         <div class="floral-card p-10 rounded-3xl text-center">Lugar<br><span class="text-3xl font-light">Casa Morada</span><br><span class="text-lg">San Bernardo, Chile</span></div>
-        <div class="floral-card p-10 rounded-3xl text-center">Vestimenta<br><span class="text-3xl font-light">Formal</span><br><span class="text-lg">Dusty rose, crema y taupe</span></div>
+        <div class="floral-card p-10 rounded-3xl text-center">Vestimenta<br><span class="text-3xl font-light">Formal</span><br><span class="text-lg">El color blanco y todos sus derivados están reservados exclusivamente para la novia.</span></div>
       </div>
     </div>
   </section>
 
-  <!-- REGALO / CÓDIGO DE NOVIO -->
-   <section class="py-20">
+  <!-- REGALO -->
+  <section class="py-20">
     <div class="max-w-2xl mx-auto px-6 text-center">
       <h2 class="text-4xl font-light mb-6 accent-blue">Nuestro Regalo 🎁</h2>
       
@@ -219,7 +228,8 @@
         <p class="text-lg text-gray-700">
           o en la siguiente cuenta bancaria
         </p>
-        <p class="text-2xl font-light text-[#1e2a44] mt-2">XXXX XXXX XXXX</p>
+        <p class="text-2xl font-light text-[#1e2a44] mt-2">CTA CTE BCI</p>
+        <p class="text-2xl font-light text-[#1e2a44] mt-2">N° 70812613</p>
       </div>
 
       <p class="text-sm text-gray-500 mt-8">¡Muchas gracias por acompañarnos en este momento tan especial!</p>
@@ -233,39 +243,60 @@
       <p class="mb-10 text-gray-700">Nos encantaría que nos acompañes en este día tan especial.<br>
       Por favor confirma antes del 6 de enero de 2027.</p>
 
-      <form id="rsvpForm" class="floral-card p-10 rounded-3xl space-y-6">
-        <input type="text" id="nombre" placeholder="Nombre completo *" class="w-full px-6 py-4 rounded-2xl border focus:outline-none focus:border-[#2c5a8c]" required>
-        
-        <div class="grid grid-cols-2 gap-6">
-          <select id="personas" class="w-full px-6 py-4 rounded-2xl border">
+      <form id="rsvpForm" class="floral-card p-8 md:p-10 rounded-3xl space-y-6">
+        <input type="text" id="nombre" placeholder="Nombre completo *" 
+               class="w-full px-6 py-4 rounded-2xl border focus:outline-none focus:border-[#2c5a8c] text-base" required>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <select id="personas" class="w-full px-6 py-4 rounded-2xl border text-base">
             <option value="">Número de personas</option>
             <option value="1">1 persona</option>
             <option value="2">2 personas</option>
           </select>
           
-          <select id="asistencia" class="w-full px-6 py-4 rounded-2xl border">
+          <select id="asistencia" class="w-full px-6 py-4 rounded-2xl border text-base">
             <option value="">¿Asistirás?</option>
             <option value="Sí">Sí, asistiré 😊</option>
             <option value="No">No podré asistir 😔</option>
           </select>
         </div>
 
-        <textarea id="mensaje" placeholder="Mensaje para los novios (opcional)" rows="3" class="w-full px-6 py-4 rounded-3xl border"></textarea>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <select id="condicionAlimentaria" onchange="toggleCondicion(this)" 
+                  class="w-full px-6 py-4 rounded-2xl border text-base">
+            <option value="">Condición alimentaria</option>
+            <option value="Sí">Sí, tengo restricción</option>
+            <option value="No">No, como de todo</option>
+          </select>
+          
+          <input type="text" id="detalleCondicion" placeholder="¿Cuál es tu restricción alimentaria?" 
+                 class="w-full px-6 py-4 rounded-2xl border focus:outline-none focus:border-[#2c5a8c] hidden text-base">
+        </div>
+
+        <textarea id="mensaje" placeholder="Mensaje para los novios (opcional)" rows="3" 
+                  class="w-full px-6 py-4 rounded-3xl border text-base"></textarea>
         
-        <button type="submit" class="w-full bg-[#25D366] hover:bg-[#1EBE5B] text-white py-6 rounded-3xl text-xl font-medium transition flex items-center justify-center gap-3">
-          <i class="fab fa-whatsapp text-2xl"></i>
+        <button type="submit" 
+                class="w-full bg-[#25D366] hover:bg-[#1EBE5B] text-white py-6 rounded-3xl text-xl font-medium transition flex items-center justify-center gap-3">
+          <i class="fab fa-whatsapp text-3xl"></i>
           ENVIAR POR WHATSAPP
         </button>
       </form>
     </div>
   </section>
 
-  <!-- UBICACIÓN -->
+  <!-- UBICACIÓN (CORREGIDA) -->
   <section class="py-20">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h2 class="text-4xl font-light mb-8 accent-blue">Ubicación</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.5!2d-70.7!3d-33.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM2JzAwLjAiUyA3MMKwNDInMDAuMCJX!5e0!3m2!1ses!2scl!4v1746890000000" 
-              width="100%" height="450" style="border:0; border-radius:24px;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.5!2d-70.7239626!3d-33.6282956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662df731d536741%3A0x4e58c6d247a56d8!2sCasa%20Morada!5e0!3m2!1ses!2scl!4v1746890000000" 
+        width="100%" 
+        height="450" 
+        style="border:0; border-radius:24px;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
       <a href="https://maps.app.goo.gl/52Uorb8NY8oTeZkw6" target="_blank" class="mt-6 inline-block bg-[#1e2a44] text-white px-8 py-4 rounded-full hover:bg-[#2c5a8c]">
         Abrir en Google Maps
       </a>
@@ -281,8 +312,8 @@
   </section>
 
   <script>
-    // Galería (sin cambios)
-    const photos = ["./imagenes/foto1.jpg","./imagenes/foto2.jpg","./imagenes/foto3.jpg","./imagenes/foto4.jpg","./imagenes/foto5.jpg"];
+    // Galería
+    const photos = ["./imagenes/foto1.jpg","./imagenes/foto2.jpg","./imagenes/foto3.jpg","./imagenes/foto4.jpg","./imagenes/foto5.jpg","./imagenes/foto6.jpg"];
     let currentSlide = 0;
 
     function renderSlides() {
@@ -301,6 +332,18 @@
     renderSlides();
     setInterval(nextSlide, 5000);
 
+    // Condición alimentaria
+    function toggleCondicion(select) {
+      const detalleInput = document.getElementById('detalleCondicion');
+      if (select.value === "Sí") {
+        detalleInput.classList.remove('hidden');
+        detalleInput.required = true;
+      } else {
+        detalleInput.classList.add('hidden');
+        detalleInput.required = false;
+      }
+    }
+
     // WhatsApp RSVP
     document.getElementById('rsvpForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -308,6 +351,8 @@
       const nombre = document.getElementById('nombre').value.trim();
       const personas = document.getElementById('personas').value;
       const asistencia = document.getElementById('asistencia').value;
+      const condicion = document.getElementById('condicionAlimentaria').value;
+      const detalleCondicion = document.getElementById('detalleCondicion').value.trim();
       const mensaje = document.getElementById('mensaje').value.trim();
 
       if (!nombre || !asistencia) {
@@ -315,14 +360,19 @@
         return;
       }
 
-      const texto = `*Confirmación de Boda*%0A%0A` +
-                    `👤 *Nombre:* ${nombre}%0A` +
-                    `👥 *Personas:* ${personas || 'No especificado'}%0A` +
-                    `✅ *Asistencia:* ${asistencia}%0A` +
-                    `${mensaje ? `💌 *Mensaje:* ${mensaje}` : ''}`;
+      let texto = `*Confirmación de Boda*%0A%0A` +
+                  `👤 *Nombre:* ${nombre}%0A` +
+                  `👥 *Personas:* ${personas || 'No especificado'}%0A` +
+                  `✅ *Asistencia:* ${asistencia}%0A`;
+
+      if (condicion) {
+        texto += `🍽️ *Condición alimentaria:* ${condicion}%0A`;
+        if (detalleCondicion) texto += `   Detalle: ${detalleCondicion}%0A`;
+      }
+
+      if (mensaje) texto += `💌 *Mensaje:* ${mensaje}`;
 
       const numeroWhatsApp = "56963330226";
-
       const url = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
       window.open(url, '_blank');
 
@@ -331,20 +381,26 @@
       }, 600);
     });
 
-    // Contador
+    // Contador Corregido
     function countdown() {
-      const weddingDate = new Date('2027-02-06T17:00:00').getTime();
+      const weddingDate = new Date('2027-02-06T17:00:00-03:00').getTime();
       const distance = weddingDate - Date.now();
+
+      if (distance < 0) {
+        document.getElementById('countdown').innerHTML = `<div class="col-span-4 text-3xl font-light">¡Ya estamos casados! 💍</div>`;
+        return;
+      }
+
       const days = Math.floor(distance / (1000*60*60*24));
       const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
       const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
       const seconds = Math.floor((distance % (1000*60)) / 1000);
 
       document.getElementById('countdown').innerHTML = `
-        <div><div class="text-6xl font-light">${days}</div><div class="text-sm tracking-widest">DÍAS</div></div>
-        <div><div class="text-6xl font-light">${hours}</div><div class="text-sm tracking-widest">HORAS</div></div>
-        <div><div class="text-6xl font-light">${minutes}</div><div class="text-sm tracking-widest">MINUTOS</div></div>
-        <div><div class="text-6xl font-light">${seconds}</div><div class="text-sm tracking-widest">SEGUNDOS</div></div>
+        <div class="text-center"><div class="countdown-number">${days}</div><div class="text-xs tracking-widest mt-1 opacity-75">DÍAS</div></div>
+        <div class="text-center"><div class="countdown-number">${hours}</div><div class="text-xs tracking-widest mt-1 opacity-75">HORAS</div></div>
+        <div class="text-center"><div class="countdown-number">${minutes}</div><div class="text-xs tracking-widest mt-1 opacity-75">MINUTOS</div></div>
+        <div class="text-center"><div class="countdown-number">${seconds}</div><div class="text-xs tracking-widest mt-1 opacity-75">SEGUNDOS</div></div>
       `;
     }
     setInterval(countdown, 1000);
