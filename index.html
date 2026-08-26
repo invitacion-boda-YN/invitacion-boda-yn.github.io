@@ -300,12 +300,7 @@
             <option value="">Condición alimentaria</option>
             <option value="Ninguna">No tengo restricciones</option>
             <option value="Vegetariano">Vegetariano</option>
-            <option value="Vegano">Vegano</option>
-            <option value="Sin gluten">Sin gluten (Celíaco)</option>
             <option value="Sin lactosa">Sin lactosa</option>
-            <option value="Alergia frutos secos">Alergia a frutos secos</option>
-            <option value="Alergia marisco">Alergia al marisco / pescado</option>
-            <option value="Sin cerdo">Sin cerdo</option>
             <option value="Otra">Otra (especificar abajo)</option>
           </select>
 
@@ -316,9 +311,9 @@
         </div>
 
         <button type="submit" 
-                class="w-full bg-[#25D366] hover:bg-[#1EBE5B] text-white py-6 rounded-3xl text-xl font-medium transition flex items-center justify-center gap-3">
+                class="w-full bg-[#25D366] hover:bg-[#1EBE5B] text-white py-6 rounded-3xl text-xl font-medium transition flex items-center justify-center gap-3 shadow-lg">
           <i class="fab fa-whatsapp text-3xl"></i>
-          ENVIAR POR WHATSAPP
+          CONFIRMAR EN EL GRUPO DE WHATSAPP
         </button>
       </form>
     </div>
@@ -344,7 +339,7 @@
     </div>
   </section>
 
-  <script>
+<script>
     // Galería
     const photos = ["./imagenes/foto1.jpg","./imagenes/foto2.jpg","./imagenes/foto3.jpg","./imagenes/foto4.jpg","./imagenes/foto5.jpg","./imagenes/foto6.jpg"];
     let currentSlide = 0;
@@ -378,8 +373,8 @@
       }
     }
 
-    // WhatsApp con DOS NÚMEROS
-    document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+// ==================== FORMULARIO RSVP ====================
+    document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
       e.preventDefault();
 
       const nombre = document.getElementById('nombre').value.trim();
@@ -393,34 +388,58 @@
         return;
       }
 
-      let texto = `*Confirmación de Boda*%0A%0A` +
-                  `👤 *Nombre:* ${nombre}%0A` +
-                  `👥 *Personas:* ${personas || 'No especificado'}%0A` +
-                  `✅ *Asistencia:* ${asistencia}%0A`;
-
-      if (condicion && condicion !== "Ninguna" && condicion !== "") {
-        texto += `🍽️ *Condición alimentaria:* ${condicion}%0A`;
-        if (detalleCondicion) texto += `   Detalle: ${detalleCondicion}%0A`;
-      }
-
-      // === DOS NÚMEROS DE WHATSAPP ===
-      const numero1 = "56938789308";   // Primer número
-      const numero2 = "56938789308";   // ← Cambia este por el segundo número
-
-      const url1 = `https://wa.me/${numero1}?text=${texto}`;
-      const url2 = `https://wa.me/${numero2}?text=${texto}`;
-
-      window.open(url1, '_blank');
+      const telefonoPrincipal = "56938789308"; 
       
-      setTimeout(() => {
-        window.open(url2, '_blank');
-      }, 800);
+      // PEGA AQUÍ LA NUEVA URL QUE COPIASTE DE GOOGLE APPS SCRIPT
+      const scriptURL = "https://script.google.com/macros/s/AKfycbxFml1S8NrzFgvdGK6uIZGu0nDB5c7dukOxHARuQH8o_fDqNUpRVcFiUZk-nISGY6C5cA/exec";
 
-      setTimeout(() => {
-        alert(`¡Gracias ${nombre}! Tu confirmación se envió a ambos números.`);
-      }, 1200);
+      const btn = e.target.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner animate-spin text-3xl"></i> Guardando...';
+
+      try {
+        const dataPayload = {
+          nombre: nombre,
+          personas: personas || "No especificado",
+          asistencia: asistencia,
+          condicion: condicion || "Ninguna",
+          detalleCondicion: detalleCondicion
+        };
+
+        await fetch(scriptURL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 
+            'Content-Type': 'text/plain;charset=utf-8' 
+          },
+          body: JSON.stringify(dataPayload)
+        });
+
+        let mensaje = `¡Hola! Confirmo mi respuesta para la boda:%0A%0A`;
+        mensaje += `• *Nombre:* ${nombre}%0A`;
+        mensaje += `• *¿Asistirá?:* ${asistencia}%0A`;
+        mensaje += `• *Personas:* ${personas || '1'}%0A`;
+        mensaje += `• *Restricción alimentaria:* ${condicion}`;
+        if (detalleCondicion) mensaje += ` (${detalleCondicion})`;
+
+        window.open(`https://api.whatsapp.com/send?phone=${telefonoPrincipal}&text=${mensaje}`, '_blank');
+
+        document.getElementById('rsvpForm').reset();
+        
+        const wrapper = document.getElementById('detalleWrapper');
+        if (wrapper) wrapper.classList.add('hidden');
+
+      } catch (error) {
+        alert("Hubo un problema al enviar la información. Por favor revisa tu conexión.");
+        console.error("Error RSVP:", error);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
     });
 
+    // Contador
     function countdown() {
       const weddingDate = new Date('2027-02-06T17:00:00-03:00').getTime();
       const distance = weddingDate - Date.now();
